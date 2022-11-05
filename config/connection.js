@@ -1,7 +1,6 @@
 const { connect, connection } = require('mongoose');
 
-// insert database name below
-connect('mongodb://localhost/', {
+connect('mongodb://localhost/socialmediaDB', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
