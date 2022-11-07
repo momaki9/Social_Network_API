@@ -8,8 +8,11 @@ const names = [
     'userfour',
     "friendlyone",
     "friendlytwo",
-    "friendlythree"
+    "friendlythree",
+    "old009",
+    "old008"
 ];
+
 
 const helpfulThoughts = [
     "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled",
@@ -27,18 +30,32 @@ const reactions = [
     " hic tempore nobis et aspernatur recusandae"
 ]
 
-// Get a random item given an array
+const userNames = [
+    "testing123",
+    "testing129",
+    "testing125",
+    "testing120",
+    "testing122",
+    "testing124",
+]
+
 const getRandomArrItem = (array) => array[Math.floor(Math.random() * array.length)];
 
 const randomName = () => getRandomArrItem(names);
+const randomUser = () => getRandomArrItem(userNames);
+
 const randomReaction = () => getRandomArrItem(reactions);
 
 const randomThought = (value) => {
     const data = [];
     for (let index = 0; index < value; index++) {
-        data.push({thoughtText: getRandomArrItem(helpfulThoughts)});
+        data.push({
+            thoughtText: getRandomArrItem(helpfulThoughts),
+            username: randomUser(),
+            reactions: [...randomReaction()]
+        });
     }
     return data;
 };
 
-module.exports = { randomName, randomReaction, randomThought }
+module.exports = { randomName, randomThought }
