@@ -22,6 +22,22 @@ module.exports = {
             .then((dbUserData) => res.json(dbUserData))
             .catch((err) => res.status(500).json(err));
     },
+    updateUser(req, res) {
+        User.findOneAndUpdate(
+          { _id: req.params.userId },
+          { $set: req.body },
+          { runValidators: true, new: true }
+        )
+          .then((user) =>
+            !user
+              ? res.status(404).json({ message: 'User Not found' })
+              : res.json(user)
+          )
+          .catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+          });
+    },
     deleteUser(req, res) {
         User.findOneAndDelete({ _id: req.params.userId })
           .then((user) =>
@@ -32,4 +48,18 @@ module.exports = {
           .then(() => res.json({ message: 'User and associated data deleted' }))
           .catch((err) => res.status(500).json(err));
       },
+    addFriends(req, res) {
+      User.findOneAndUpdate(
+        { _id: req.params.userId },
+        { $addToSet: { friends: req.params.friendId } },
+        { runValidators: true, new: true }
+      )
+        .then((user) =>
+          !user
+            ? res
+             .status(404).json({ message: "No user found with the given id!"})
+             : res.json(user)
+        )
+        .catch((err) => res.status(500).json(err));
+    }
 };
