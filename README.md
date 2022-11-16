@@ -9,10 +9,11 @@
 ---
 ---
 
-## ![Screenshot]()
-## ![Screenshot]()
-## ![Screenshot]()
-
+## ![Screenshot](./assets/image/GET_all_users.png)
+## ![Screenshot](./assets/image/POST_new_user.png)
+## ![Screenshot](./assets/image/PUT_update_thought.png)
+## ![Screenshot](./assets/image/DELETE_reaction.png)
+## ![Screenshot](./assets/image/BONUS_user_and_associated_data_deleted.png)
 ---
 
 ## Table of Contents
@@ -33,7 +34,7 @@ A user can clone the files found in this repo then install the required node pac
 
 In terminal and after installing the necessary node packages, open Insomnia Core and perform the different possible requests on one of the routes. For additional information, please reference the video linked below.
 
-[Walkthrough Video]()
+[Walkthrough Video](https://drive.google.com/file/d/1I_tMEcHCIaOIrcAqT6YjGZqwMm3My5rB/view?usp=sharing)
 
 
 ## License
